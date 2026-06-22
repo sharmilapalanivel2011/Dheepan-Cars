@@ -60,14 +60,14 @@ app.post("/upload-image", upload.single("image"), async (req, res) => {
 
 
 // Email transporter
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "dheepancarsproject@gmail.com",
-    pass: "ohufqsgzmwwtqtyu"
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 })
-
 
 
 
@@ -1053,4 +1053,8 @@ app.post("/admin/migrate-static", async (req, res) => {
 
 
 // server start
-app.listen(5000, () => console.log("Server running on port 5000"))
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
