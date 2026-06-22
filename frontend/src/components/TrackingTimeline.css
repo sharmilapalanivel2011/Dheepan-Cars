@@ -1,0 +1,134 @@
+/* Wrapper */
+.timeline-wrapper {
+  background-color: #000;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Cancelled Box */
+.cancelled-box {
+  background-color: #1a1a1a;  
+  color: #ff4d4d;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ff0000;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Timeline Steps Container */
+.timeline-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* Connecting Line */
+.timeline-steps::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 5%;
+  width: 90%;
+  height: 3px;
+  background-color: #444;
+  z-index: 0;
+}
+
+/* Each Step */
+.t-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+
+/* Circle */
+.t-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #222;
+  border: 2px solid #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 8px;
+  transition: 0.3s ease;
+}
+
+/* Label */
+.t-label {
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* Completed Step */
+.t-step.completed .t-circle {
+  background-color: #ff0000;
+  border-color: #ff0000;
+  color: #fff;
+}
+
+.t-step.completed .t-label {
+  color: #fff;
+}
+
+/* Active Step */
+.t-step.active .t-circle {
+  border-color: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}
+
+.t-step.active .t-label {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+/* History Box */
+.history-box {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.history-box h4 {
+  margin-bottom: 15px;
+  color: #ff4d4d;
+}
+
+/* History Row */
+.history-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #222;
+  font-size: 13px;
+}
+
+.history-row:last-child {
+  border-bottom: none;
+}
+
+/* History Text */
+.h-status {
+  color: #fff;
+  font-weight: 500;
+}
+
+.h-time {
+  color: #aaa;
+}
+
+.h-note {
+  color: #ff4d4d;
+  font-style: italic;
+}

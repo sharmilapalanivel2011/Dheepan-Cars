@@ -1,0 +1,203 @@
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+url("/images/hero.png");
+
+background-size:cover;
+background-position:center;
+}
+
+/* Animation */
+
+.hero-content{
+max-width:800px;
+
+opacity:0;
+transform:translateY(60px);
+animation:slideUp 1.5s ease forwards;
+}
+
+/* Keyframes */
+
+@keyframes slideUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Text styles */
+
+.welcome{
+font-size:25px;
+letter-spacing:4px;
+margin-bottom:10px;
+color:#ddd;
+}
+
+.brand{
+font-size:85px;
+font-weight:700;
+color:white;
+margin-bottom:15px;
+letter-spacing: 5px;
+}
+
+.tagline{
+font-size:30px;
+margin-bottom:20px;
+color:#e50914;
+letter-spacing: 2px;
+}
+
+.description{
+font-size:20px;
+color: rgb(170, 169, 169);
+line-height:1.6;
+margin-bottom:35px;
+}
+
+/* Buttons */
+
+.hero-buttons{
+display:flex;
+gap:20px;
+justify-content:center;
+}
+
+.explore-btn{
+background:#e50914;
+border:none;
+padding:12px 30px;
+font-size:16px;
+color:white;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.explore-btn:hover{
+background:#b20710;
+transform:scale(1.05);
+}
+
+.shop-btn{
+background:transparent;
+border:2px solid #e50914;
+padding:12px 30px;
+font-size:16px;
+color:white;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.shop-btn:hover{
+background:#e50914;
+transform:scale(1.05);
+}
+
+
+.view-all-btn {
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #ff1e3c, #c4002b);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /*  */
+}
+
+/* .view-all-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #c4002b, #ff1e3c);
+  box-shadow: 0 6px 20px rgba(255, 30, 60, 0.6);
+} */
+
+/* Tablet */
+
+@media (max-width:1024px){
+
+.hero{
+height:80vh;
+padding:20px;
+}
+
+.brand{
+font-size:60px;
+}
+
+.tagline{
+font-size:24px;
+}
+
+.description{
+font-size:18px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.hero{
+height:auto;
+padding:80px 20px;
+}
+
+.hero-content{
+max-width:100%;
+}
+
+.welcome{
+font-size:18px;
+letter-spacing:2px;
+}
+
+.brand{
+font-size:40px;
+letter-spacing:3px;
+}
+
+.tagline{
+font-size:18px;
+}
+
+.description{
+font-size:15px;
+line-height:1.5;
+}
+
+/* Buttons side by side */
+
+@media (max-width:768px){
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+}
+
+.explore-btn,
+.shop-btn{
+padding:8px 18px;
+font-size:14px;
+width:auto;
+}
+
+}
+
+}
+.hero-buttons button{
+min-width:120px;
+}

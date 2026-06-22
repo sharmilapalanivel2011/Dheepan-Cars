@@ -1,0 +1,122 @@
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #111;
+  border-bottom: 1px solid #222;
+
+  position: sticky;   /* change pannunga */
+  top: 0;             /* important */
+  z-index: 1000;      /* above content */
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#e50914;
+}
+
+/* Desktop Menu */
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+font-size:16px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#e50914;
+}
+
+/* Menu Icon */
+
+.menu-icon{
+display:none;
+font-size:24px;
+cursor:pointer;
+color:white;
+}
+
+
+.nav-links a.active{
+border-bottom:2px solid #e50914;
+padding-bottom:4px;
+}
+
+
+.wishlist-count {
+  background: #e50914;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 4px;
+}
+
+
+
+.menu-icon{
+display:none;
+font-size:24px;
+cursor:pointer;
+color:white;
+}
+
+@media (max-width:768px){
+
+.menu-icon{
+display:block;
+}
+
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:70px;
+right:20px;
+background:#111;
+padding:12px 18px;
+border-radius:6px;
+gap:12px;
+z-index:1000;
+width:auto;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+}
+/* Mobile Responsive */
+
+@media (max-width:768px){
+
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+right:20px;
+background:#111;
+padding:12px 18px;
+border-radius:6px;
+gap:10px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-icon{
+display:block;
+}
+
+}

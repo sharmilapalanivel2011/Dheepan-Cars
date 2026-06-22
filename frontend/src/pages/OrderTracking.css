@@ -1,0 +1,177 @@
+/* Page Background */
+.track-page {
+  background-color: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Container */
+.track-container {
+  background-color: #111;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+}
+
+/* Center (loading / error) */
+.track-center {
+  background-color: #000;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Back Button */
+.back-btn {
+  background-color: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ff0000;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+/* Heading */
+.track-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ff0000;
+  padding-bottom: 8px;
+}
+
+/* Order ID */
+.order-id-txt {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+/* Status Badge */
+.status-badge {
+  text-align: center;
+  padding: 8px;
+  width: 100px;
+  margin: 0 auto 20px auto; /* 🔥 centers horizontally */
+  border-radius: 20px;
+  font-size: 13px;
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+/* Dynamic Status Colors */
+.s-order-placed,
+.s-processing,
+.s-shipped,
+.s-out-for-delivery {
+  border-color: #ff0000;
+  color: #ff4d4d;
+}
+
+.s-delivered {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+}
+
+.s-cancelled {
+  background-color: #222;
+  color: #aaa;
+  border: 1px solid #555;
+}
+
+/* Product Section */
+.track-product {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+}
+
+.track-product img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #333;
+}
+
+.prod-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.prod-price {
+  color: #ff4d4d;
+  font-size: 13px;
+}
+
+/* Customer Info */
+.customer-info {
+  margin-top: 20px;
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.customer-info b {
+  color: #ff4d4d;
+}
+/* ── Add these to your existing OrderTracking.css ── */
+
+/* Wraps both single and multi-item product blocks */
+.track-product-section {
+  margin: 1.5rem 0;
+}
+
+/* Multiple cart items stacked */
+.track-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Quantity label inline with price */
+.prod-qty {
+  color: #888;
+  font-size: 0.9em;
+}
+
+/* Per-item subtotal (shown only when qty > 1) */
+.prod-subtotal {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+/* Total row at the bottom of cart orders */
+.track-order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+}

@@ -1,0 +1,46 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+}
+
+/* Container */
+
+.container{
+width:90%;
+margin:auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Buttons */
+
+.btn{
+background:#e50914;
+border:none;
+padding:10px 20px;
+color:white;
+cursor:pointer;
+border-radius:5px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#b20710;
+}
+
+/* Links */
+
+a{
+text-decoration:none;
+color:white;
+}

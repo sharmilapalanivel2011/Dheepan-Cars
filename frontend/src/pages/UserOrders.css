@@ -1,0 +1,121 @@
+.orders-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 40px 20px;
+}
+
+.orders-page h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+.orders-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  gap: 16px;
+}
+
+.order-card-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.order-card-left img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.order-product-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.order-card-left p {
+  font-size: 13px;
+  color: #555;
+  margin: 2px 0;
+}
+
+.order-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.track-btn {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.track-btn:hover {
+  background: #c1121f;
+}
+
+/* Status badges */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.s-pending        { background: #fff3cd; color: #856404; }
+.s-confirmed      { background: #d1ecf1; color: #0c5460; }
+.s-processing     { background: #cce5ff; color: #004085; }
+.s-shipped        { background: #d4edda; color: #155724; }
+.s-out-for-delivery { background: #e2d9f3; color: #4a235a; }
+.s-delivered      { background: #d4edda; color: #155724; }
+.s-cancelled      { background: #f8d7da; color: #721c24; }
+
+.orders-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  font-size: 18px;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .order-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-card-right {
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

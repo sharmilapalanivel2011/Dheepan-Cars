@@ -1,0 +1,196 @@
+/* ===========================
+   AdminAnalytics.css
+   =========================== */
+
+.analytics-header {
+  margin-bottom: 28px;
+}
+
+.analytics-header h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0;
+}
+
+.analytics-subtitle {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Loading */
+.analytics-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  gap: 16px;
+  color: #555;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #1e1e1e;
+  border-top: 3px solid #e50914;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* KPI Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.kpi-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.kpi-card:hover {
+  border-color: #e50914;
+  transform: translateY(-2px);
+}
+
+.kpi-icon { font-size: 2rem; }
+.kpi-label { color: #666; font-size: 0.78rem; margin: 0 0 4px; }
+.kpi-value { color: #fff; font-size: 1.4rem; font-weight: 800; margin: 0; }
+.kpi-sub   { color: #555; font-size: 0.75rem; margin: 4px 0 0; }
+
+
+
+
+
+
+/* Analytics Section */
+
+
+.analytics-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.analytics-section h3 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.analytics-section-header h3 { margin: 0; }
+
+/* Chart controls */
+.chart-controls-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.toggle-group {
+  display: flex;
+  background: #0d0d0d;
+  border: 1px solid #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.toggle-btn {
+  padding: 6px 14px;
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: all 0.2s;
+}
+.toggle-btn:hover  { color: #ccc; }
+.toggle-btn.active { background: #e50914; color: #fff; font-weight: 600; }
+
+/* Bottom Grid */
+.analytics-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .analytics-bottom-grid { grid-template-columns: 1fr; }
+}
+
+/* Top Products List */
+.top-products-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.top-product-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #0d0d0d;
+  border: 1px solid #1e1e1e;
+  border-radius: 10px;
+  transition: border-color 0.2s;
+}
+.top-product-row:hover { border-color: #e50914; }
+
+.rank-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  min-width: 28px;
+  text-align: center;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.rank-1 { background: #3a2800; color: #ffd700; }
+.rank-2 { background: #252525; color: #c0c0c0; }
+.rank-3 { background: #2a1500; color: #cd7f32; }
+.rank-4, .rank-5 { background: #1a1a1a; color: #555; }
+
+.tp-thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #2a2a2a;
+}
+
+.tp-info { flex: 1; min-width: 0; }
+.tp-name    { color: #ddd; font-size: 0.85rem; font-weight: 600; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tp-revenue { color: #e50914; font-size: 0.78rem; margin: 2px 0 0; }
+
+.tp-sold {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40px;
+}
+.tp-sold span { color: #fff; font-weight: 800; font-size: 1rem; }
+.tp-sold small { color: #555; font-size: 0.7rem; }
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .analytics-header h1 { font-size: 1.3rem; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .analytics-section-header { flex-direction: column; align-items: flex-start; }
+}

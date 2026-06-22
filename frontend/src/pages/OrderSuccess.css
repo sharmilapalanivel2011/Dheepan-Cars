@@ -1,0 +1,443 @@
+/* =============================================
+   OrderSuccess.css
+   Theme: Black #0a0a0a | Red #e50914 | White
+   ============================================= */
+
+.os-page {
+  background: #0a0a0a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ── No Order Fallback ─────────────────────── */
+.os-no-order {
+  background: #0a0a0a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  color: #fff;
+}
+
+.os-no-order button {
+  padding: 0.65rem 1.5rem;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ── Card Shell ────────────────────────────── */
+.os-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  max-width: 820px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── Hero Section ──────────────────────────── */
+.os-hero {
+  background: #1a0000;
+  border-bottom: 2px solid #e50914;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.os-check-ring {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #e50914;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  background: rgba(229, 9, 20, 0.12);
+}
+
+.os-check-icon {
+  font-size: 30px;
+  color: #e50914;
+}
+
+.os-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.4rem;
+}
+
+.os-subtitle {
+  font-size: 14px;
+  color: #888;
+  margin: 0 0 1rem;
+}
+
+.os-orderid {
+  display: inline-block;
+  background: rgba(229, 9, 20, 0.15);
+  border: 1px solid rgba(229, 9, 20, 0.4);
+  color: #e50914;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 18px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* ── Body ──────────────────────────────────── */
+.os-body {
+  padding: 2rem;
+}
+
+/* ── Product Row ───────────────────────────── */
+.os-product-row {
+  display: flex;
+  gap: 1.25rem;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+
+.os-product-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  border: 1px solid #2a2a2a;
+}
+
+.os-product-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.os-badge-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.os-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(229, 9, 20, 0.2);
+  color: #e50914;
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.os-product-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.os-product-desc {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.os-product-price {
+  font-size: 21px;
+  font-weight: 700;
+  color: #e50914;
+  margin: 0 0 0.5rem;
+}
+
+.os-offer-tag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #555;
+}
+
+/* ── Info Grid ─────────────────────────────── */
+.os-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.os-info-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.os-info-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #e50914;
+  text-transform: uppercase;
+  margin: 0 0 0.65rem;
+}
+
+.os-info-card p {
+  font-size: 14px;
+  color: #bbb;
+  margin: 0 0 0.2rem;
+}
+
+.os-info-card p:last-child {
+  margin: 0;
+}
+
+.os-info-name {
+  font-weight: 600;
+  color: #fff !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.os-delivery-estimate {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  background: rgba(229, 9, 20, 0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(229, 9, 20, 0.2);
+  font-size: 13px;
+  color: #bbb;
+}
+
+.os-truck-icon {
+  color: #e50914;
+  flex-shrink: 0;
+}
+
+.os-delivery-estimate strong {
+  color: #e50914;
+  font-weight: 600;
+}
+
+.os-payment-name {
+  font-size: 15px;
+  color: #ddd !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.os-payment-sub {
+  font-size: 12px;
+  color: #555 !important;
+}
+
+/* ── Order Tracker ─────────────────────────── */
+.os-tracker-section {
+  margin-bottom: 1.75rem;
+}
+
+.os-tracker-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #e50914;
+  text-transform: uppercase;
+  margin: 0 0 0.85rem;
+}
+
+.os-steps {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.os-step-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.os-step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 1;
+  position: relative;
+}
+
+.os-step-done {
+  background: #e50914;
+  color: #fff;
+}
+
+.os-step-pending {
+  background: #222;
+  color: #444;
+  border: 1px solid #333;
+}
+
+.os-step-label {
+  font-size: 11px;
+  color: #555;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.os-step-item:first-child .os-step-label {
+  color: #e50914;
+}
+
+.os-step-line {
+  position: absolute;
+  top: 16px;
+  left: calc(50% + 16px);
+  right: calc(-50% + 16px);
+  height: 1px;
+  background: #2a2a2a;
+  z-index: 0;
+}
+
+.os-line-done {
+  background: #e50914;
+}
+
+/* ── Action Buttons ────────────────────────── */
+.os-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.os-btn-primary {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.75rem 1.5rem;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.2s;
+}
+
+.os-btn-primary:hover {
+  background: #c20812;
+}
+
+.os-btn-secondary {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: #bbb;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.os-btn-secondary:hover {
+  border-color: #666;
+  color: #fff;
+}
+
+/* ── Footer Note ───────────────────────────── */
+.os-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #444;
+  padding-top: 1.25rem;
+  border-top: 1px solid #1e1e1e;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 600px) {
+  .os-body {
+    padding: 1.25rem;
+  }
+
+  .os-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .os-product-row {
+    flex-direction: column;
+  }
+
+  .os-product-img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .os-title {
+    font-size: 22px;
+  }
+
+  .os-actions {
+    flex-direction: column;
+  }
+
+  .os-btn-primary,
+  .os-btn-secondary {
+    width: 100%;
+  }
+
+  .os-step-label {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .os-hero {
+    padding: 1.75rem 1rem;
+  }
+
+  .os-step-dot {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+}
+

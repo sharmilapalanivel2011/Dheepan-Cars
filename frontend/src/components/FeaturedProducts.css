@@ -1,0 +1,410 @@
+/* ==============================================
+   FeaturedProducts.css
+   Theme: Dark #0a0a0a | Primary #e50914 | White
+   Matches Products.jsx card style exactly
+   ============================================== */
+
+.fp-featured {
+  background: #0a0a0a;
+  padding: 3rem 150px;
+}
+
+/* ── Section Header ─────────────────────── */
+.fp-feat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  width: 100%;
+  max-width: 780px;
+}
+
+.fp-feat-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.fp-feat-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #e50914;
+  border-radius: 2px;
+}
+
+.fp-feat-viewall {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: #e50914;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.fp-feat-viewall:hover {
+  background: #e50914;
+  color: #fff;
+  border-color: #e50914;
+}
+
+/* ── Grid ───────────────────────────────── */
+.fp-feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 210px);
+  gap: 100px;
+  justify-content: center;
+}
+
+/* ── Card ───────────────────────────────── */
+.fp-feat-card {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.fp-feat-card:hover {
+  border-color: #2e2e2e;
+  transform: translateY(-3px);
+}
+
+/* ── Badge ──────────────────────────────── */
+.fp-feat-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e50914;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.6px;
+  z-index: 2;
+}
+
+/* ── Wishlist Button ────────────────────── */
+.fp-feat-wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.fp-feat-wishlist:hover {
+  background: #222;
+  border-color: #444;
+}
+
+/* ── Image ──────────────────────────────── */
+.fp-feat-img-wrap {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  background: #161616;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fp-feat-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.fp-feat-card:hover .fp-feat-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* ── Info ───────────────────────────────── */
+.fp-feat-info {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.fp-feat-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s;
+}
+
+.fp-feat-name:hover { color: #fff; }
+
+/* ── Rating Row ─────────────────────────── */
+.fp-feat-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.fp-feat-rating-pill {
+  background: #1d3a1a;
+  color: #639922;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.fp-feat-reviews {
+  font-size: 11px;
+  color: #4a4a4a;
+}
+
+.fp-feat-verified {
+  font-size: 11px;
+  color: #378add;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* ── Price Row ──────────────────────────── */
+.fp-feat-price-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.fp-feat-price {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.fp-feat-original {
+  font-size: 12px;
+  color: #444;
+  text-decoration: line-through;
+}
+
+.fp-feat-disc {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e50914;
+}
+
+/* ── Offer Tag ──────────────────────────── */
+.fp-feat-offer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #3a3a3a;
+  margin-top: 2px;
+}
+
+/* ── Buttons ────────────────────────────── */
+.fp-feat-btns {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.fp-feat-cart,
+.fp-feat-buy {
+  flex: 1;
+  padding: 0.55rem 0;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  font-family: inherit;
+  border: none;
+}
+
+.fp-feat-cart {
+  background: transparent;
+  color: #e50914;
+  border: 1px solid #e50914;
+}
+
+.fp-feat-cart:hover {
+  background: rgba(229, 9, 20, 0.1);
+}
+
+.fp-feat-cart.fp-feat-added {
+  background: #1d3a1a;
+  color: #639922;
+  border-color: #2a5a20;
+}
+
+.fp-feat-buy {
+  background: #e50914;
+  color: #fff;
+}
+
+.fp-feat-buy:hover { background: #c20812; }
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 1100px) {
+  .fp-featured { padding: 3rem 80px; }
+}
+
+@media (max-width: 900px) {
+  .fp-featured { padding: 3rem 40px; }
+}
+
+@media (max-width: 720px) {
+  .fp-featured { padding: 2.5rem 24px; }
+
+  .fp-feat-grid {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  .fp-feat-card {
+    width: 200px;
+  }
+}
+
+@media (max-width: 560px) {
+  .fp-featured {
+    padding: 2rem 1rem;
+  }
+
+  .fp-feat-grid {
+    grid-template-columns: repeat(2, 160px);
+    gap: 0.65rem;
+  }
+
+  .fp-feat-card {
+    width: 160px;
+  }
+
+  .fp-feat-img-wrap {
+    height: 120px;
+  }
+
+  .fp-feat-title {
+    font-size: 18px;
+  }
+
+  .fp-feat-price {
+    font-size: 14px;
+  }
+
+  .fp-feat-name {
+    font-size: 12px;
+  }
+
+  .fp-feat-cart,
+  .fp-feat-buy {
+    font-size: 10px;
+    padding: 0.45rem 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .fp-feat-grid {
+    grid-template-columns: repeat(2, 140px);
+  }
+
+  .fp-feat-card {
+    width: 140px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+
+  .fp-featured{
+    padding: 2rem 5%;
+  }
+
+  .fp-feat-header{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .fp-feat-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .fp-feat-card{
+    width: 100%;
+  }
+
+  .fp-feat-img-wrap{
+    height: 120px;
+  }
+
+  .fp-feat-name{
+    font-size: 13px;
+  }
+
+  .fp-feat-price{
+    font-size: 14px;
+  }
+
+  .fp-feat-original,
+  .fp-feat-disc,
+  .fp-feat-reviews,
+  .fp-feat-offer{
+    font-size: 10px;
+  }
+
+  .fp-feat-cart,
+  .fp-feat-buy{
+    font-size: 10px;
+    padding: 8px 4px;
+  }
+
+  .fp-feat-title{
+    font-size: 20px;
+  }
+
+  .fp-feat-viewall{
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

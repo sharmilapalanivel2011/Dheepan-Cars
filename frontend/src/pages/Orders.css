@@ -1,0 +1,114 @@
+/* ===== LAYOUT ===== */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #000;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 25px;
+  background: #000;
+  color: #fff;
+}
+
+/* ===== TITLE ===== */
+.admin-content h1 {
+  margin-bottom: 20px;
+}
+
+/* ===== SEARCH ===== */
+.search {
+  padding: 10px;
+  width: 300px;
+  border-radius: 6px;
+  border: 1px solid #222;
+  background: #fff;
+  color:#111;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.search:focus {
+  border-color: #ff0000;
+}
+
+/* ===== GRID ===== */
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+}
+
+/* ===== CARD ===== */
+.order-card {
+  background: black; /* 👈 change this */
+  border: 1px solid #222;
+  padding: 15px;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+  border-color: #ff0000;
+}
+
+/* ===== IMAGE ===== */
+.order-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: block;   /* 👈 removes inline gap */
+  background: #000;
+}
+
+/* ===== TEXT ===== */
+.order-card h3 {
+  margin: 5px 0;
+  color: #fff;
+}
+
+.order-card p {
+  margin: 3px 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* ===== DROPDOWN ===== */
+.status-dropdown {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #222;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+
+.status-dropdown:focus {
+  border-color: #ff0000;
+}
+
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .orders-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .orders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search {
+    width: 100%;
+  }
+}
