@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useContext } from "react"
 import { WishlistContext } from "../context/WishlistContext"
 import { CartContext } from "../context/CartContext"

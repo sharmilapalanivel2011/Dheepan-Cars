@@ -1,3 +1,5 @@
+import { API_URL } from "../config"
+
 import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import TrackingTimeline from "../components/TrackingTimeline"
@@ -12,7 +14,7 @@ function OrderTracking() {
   const { admin } = useAuth()
 
   useEffect(() => {
-    fetch(`http://localhost:5000/order-tracking/${orderId}`)
+    fetch(`${API_URL}/order-tracking/${orderId}`)
       .then(res => res.json())
       .then(data => { setOrder(data); setLoading(false) })
       .catch(() => setLoading(false))

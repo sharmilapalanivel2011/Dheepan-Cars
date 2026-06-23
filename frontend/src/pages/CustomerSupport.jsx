@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useState } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
 import axios from "axios"
@@ -65,7 +66,7 @@ function CustomerSupport() {
     setErrorMsg("")
 
     try {
-      const res = await axios.post("http://localhost:5000/customer-support", {
+      const res = await axios.post(`${API_URL}/customer-support`, {
         ...form,
         productId: preProductId
       })

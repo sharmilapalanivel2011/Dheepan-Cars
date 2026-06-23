@@ -1,3 +1,5 @@
+import { API_URL } from "../config"
+
 import { useLocation, useNavigate } from "react-router-dom"
 import { FaCheckCircle, FaTruck, FaLock, FaShoppingCart } from "react-icons/fa"
 import { MdLocalOffer } from "react-icons/md"

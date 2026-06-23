@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
@@ -20,7 +21,7 @@ function ResetPassword(){
 
   // STEP 1: SEND OTP
   const handleSendOtp = async () => {
-    const res = await axios.post("http://localhost:5000/send-otp", {
+    const res = await axios.post(`${API_URL}/send-otp`, {
       email
     })
 
@@ -33,7 +34,7 @@ function ResetPassword(){
 
   // STEP 2: VERIFY OTP
   const handleVerifyOtp = async () => {
-    const res = await axios.post("http://localhost:5000/verify-otp", {
+    const res = await axios.post(`${API_URL}/verify-otp`, {
       email,
       otp
     })
@@ -49,7 +50,7 @@ function ResetPassword(){
 
   // STEP 3: RESET PASSWORD
   const handleResetPassword = async () => {
-    const res = await axios.post("http://localhost:5000/reset-password", {
+    const res = await axios.post(`${API_URL}/reset-password`, {
       email,
       password
     })

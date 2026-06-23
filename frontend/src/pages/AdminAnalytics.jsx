@@ -1,5 +1,4 @@
-// AdminAnalytics.jsx — FULL FILE with Category Mix Donut added
-// Changes marked with // ← NEW
+import { API_URL } from "../config"
 
 import { useEffect, useState } from "react"
 import AdminSidebar from "../components/AdminSidebar"
@@ -41,25 +40,30 @@ function AdminAnalytics() {
 
   useEffect(() => { loadData() }, [])
 
-  const loadData = async () => {
-    setLoading(true)
-    try {
-      const res  = await fetch("http://localhost:5000/admin/analytics")
-      const json = await res.json()
-      if (json.success) {
-        setData(json)
-      } else {
-        fallbackLoad()
-      }
-    } catch {
+  
+
+const loadData = async () => {
+  setLoading(true)
+
+  try {
+    const res = await fetch(`${API_URL}/admin/analytics`)
+    const json = await res.json()
+
+    if (json.success) {
+      setData(json)
+    } else {
       fallbackLoad()
     }
-    setLoading(false)
+  } catch {
+    fallbackLoad()
   }
+
+  setLoading(false)
+}
 
   const fallbackLoad = async () => {
     try {
-      const res        = await fetch("http://localhost:5000/orders")
+      const res = await fetch(`${API_URL}/orders`)
       const ordersData = await res.json()
       setOrders(ordersData)
       setData(computeFromOrders(ordersData))

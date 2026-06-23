@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
@@ -20,7 +21,7 @@ function Register(){
   console.log("Clicked", email)
 
   try {
-    const res = await axios.post("http://localhost:5000/register", {
+    const res = await axios.post(`${API_URL}/register`, {
       username,
       email,
       password
@@ -44,7 +45,7 @@ function Register(){
 
   const handleVerifyOtp = async () => {
 
-    const res = await axios.post("http://localhost:5000/verify-otp", {
+    const res = await axios.post(`${API_URL}/verify-otp`, {
       email,
       otp
     })

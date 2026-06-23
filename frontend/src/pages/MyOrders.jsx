@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
@@ -23,7 +24,7 @@ const MyOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/my-orders/${user.email}`)
+        const res = await axios.get(`${API_URL}/my-orders/${user.email}`)
         setOrders(res.data || [])
       } catch (err) {
         setError("Failed to fetch orders")

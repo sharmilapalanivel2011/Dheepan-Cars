@@ -1,8 +1,9 @@
+import { API_URL } from "../config"
 import { useState } from "react"
 import AdminSidebar from "../components/AdminSidebar"
 import "./AdminAddProduct.css"
 
-const BASE = "http://localhost:5000"
+
 
 const CATEGORIES = [
   "RC Cars", "Diecast", "Bikes", "Trucks", "Muscle Cars", "General"

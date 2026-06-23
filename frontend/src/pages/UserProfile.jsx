@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +41,7 @@ const UserProfile = () => {
     e.preventDefault();
     setSaving(true);
     try {
-      const res = await axios.put("http://localhost:5000/update-profile", {
+      const res = await axios.put(`${API_URL}/update-profile`, {
         email: user.email, username: form.username, phone: form.phone,
       });
       if (res.data.success) { flash("Profile updated successfully ✓"); setEditing(false); }
@@ -53,7 +54,7 @@ const UserProfile = () => {
     e.preventDefault();
     setSaving(true);
     try {
-      const res = await axios.put("http://localhost:5000/save-address", {
+      const res = await axios.put(`${API_URL}/save-address`, {
         email: user.email, address: addressForm,
       });
       if (res.data.success) flash("Address saved successfully ✓");
@@ -67,7 +68,7 @@ const UserProfile = () => {
     if (pwForm.newPassword !== pwForm.confirmPassword) { flash("New passwords do not match", true); return; }
     setSaving(true);
     try {
-      const res = await axios.put("http://localhost:5000/change-password", {
+      const res = await axios.put(`${API_URL}/change-password`, {
         email: user.email, currentPassword: pwForm.currentPassword, newPassword: pwForm.newPassword,
       });
       if (res.data.success) { flash("Password changed successfully ✓"); setPwForm({ currentPassword: "", newPassword: "", confirmPassword: "" }); }

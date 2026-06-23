@@ -1,8 +1,9 @@
+import { API_URL } from "../config"
 import { useEffect, useState, useCallback } from "react"
 import AdminSidebar from "../components/AdminSidebar"
 import "./AdminStock.css"
 
-const BASE = "http://localhost:5000"
+const BASE = import.meta.env.VITE_API_URL;
 
 // ── Static products list (migrate பண்ண) ──
 const STATIC_PRODUCTS = [

@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useState, useEffect, useContext } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import axios from "axios"
@@ -433,14 +434,14 @@ function ProductDetail() {
     if (staticMatch) {
       setProduct(staticMatch)
     } else {
-      axios.get(`http://localhost:5000/products/${id}`)
+      axios.get(`${API_URL}/products/${id}`)
         .then(res => setProduct(res.data))
         .catch(() => setProduct(null))
     }
   }, [id])
 
   const fetchReviews = () => {
-    axios.get(`http://localhost:5000/reviews/${id}`)
+    axios.get(`${API_URL}/reviews/${id}`)
       .then(res => setReviews(res.data))
       .catch(() => setReviews([]))
   }
@@ -456,7 +457,7 @@ function ProductDetail() {
 
     setSubmitting(true)
     try {
-      const res = await axios.post("http://localhost:5000/reviews", {
+      const res = await axios.post(`${API_URL}/reviews`, {
         productId: id, username: userName, email: userEmail,
         rating: userRating, comment: comment.trim()
       })
@@ -476,18 +477,18 @@ function ProductDetail() {
 
   const handleLike = async (reviewId) => {
     if (!userEmail) return
-    await axios.put(`http://localhost:5000/reviews/${reviewId}/like`, { email: userEmail })
+    await axios.put(`${API_URL}/reviews/${reviewId}/like`, { email: userEmail })
     fetchReviews()
   }
 
   const handleDislike = async (reviewId) => {
     if (!userEmail) return
-    await axios.put(`http://localhost:5000/reviews/${reviewId}/dislike`, { email: userEmail })
+    await axios.put(`${API_URL}/reviews/${reviewId}/dislike`, { email: userEmail })
     fetchReviews()
   }
 
   const handleDelete = async (reviewId) => {
-    await axios.delete(`http://localhost:5000/reviews/${reviewId}`)
+    await axios.delete(`${API_URL}/reviews/${reviewId}`)
     fetchReviews()
   }
 
@@ -497,9 +498,13 @@ function ProductDetail() {
     setTimeout(() => setAddedToCart(false), 1500)
   }
 
-  const avgRating = reviews.length
-    ? (reviews.reduce((s, r) => s + r.rating, 0) / reviews.length).toFixed(1)
-    : 0
+  const avgRating =
+  Array.isArray(reviews) && reviews.length
+    ? (
+        reviews.reduce((s, r) => s + r.rating, 0) /
+        reviews.length
+      ).toFixed(1)
+    : 0;
 
   const ratingCount = (star) => reviews.filter(r => r.rating === star).length
   const ratingPercent = (star) => reviews.length ? Math.round((ratingCount(star) / reviews.length) * 100) : 0

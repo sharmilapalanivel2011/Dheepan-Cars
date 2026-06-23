@@ -1,10 +1,11 @@
+import { API_URL } from '../config';
 import { useState, useEffect, useContext } from "react"
 import { FaStar, FaTimes, FaPlus, FaShoppingCart, FaBolt, FaCheckCircle, FaTrophy, FaBalanceScale } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
 import { CartContext } from "../context/CartContext"
 import "./ProductComparison.css"
 
-const BASE = "http://localhost:5000"
+const BASE = import.meta.env.VITE_API_URL;
 
 // ─── Static product list (unchanged) ─────────────────────────────────────────
 const staticProducts = [

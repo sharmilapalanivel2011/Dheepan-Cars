@@ -1,4 +1,5 @@
 // src/pages/Cart.jsx
+import { API_URL } from "../config"
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { CartContext } from "../context/CartContext"

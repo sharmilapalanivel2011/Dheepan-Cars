@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
@@ -11,7 +12,7 @@ function UserOrders() {
 
   useEffect(() => {
     if (!user?.email) return
-    fetch(`http://localhost:5000/my-orders/${user.email}`)
+    fetch(`${API_URL}/my-orders/${user.email}`)
       .then(res => res.json())
       .then(data => { setOrders(data); setLoading(false) })
       .catch(() => setLoading(false))

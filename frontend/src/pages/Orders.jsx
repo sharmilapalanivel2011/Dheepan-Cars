@@ -1,3 +1,5 @@
+import { API_URL } from "../config"
+
 import { useEffect, useState } from "react"
 import AdminSidebar from "../components/AdminSidebar"
 import "./Orders.css"
@@ -9,7 +11,7 @@ function Orders() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch(`${API_URL}/orders`)
       .then(res => res.json())
       .then(data => setOrders(data))
   }, [])
@@ -22,7 +24,7 @@ function Orders() {
   const deleteOrder = async (id) => {
     const confirmDelete = window.confirm("Delete this order?")
     if (!confirmDelete) return
-    await fetch(`http://localhost:5000/order/${id}`, { method: "DELETE" })
+    await fetch(`${API_URL}/order/${id}`, { method: "DELETE" })
     setOrders(orders.filter(o => o._id !== id))
   }
 
@@ -98,7 +100,7 @@ function Orders() {
                 defaultValue={order.trackingStatus || "Order Placed"}
                 onChange={async (e) => {
                   const newStatus = e.target.value
-                  await fetch(`http://localhost:5000/order-tracking/${order._id}/status`, {
+                  await fetch(`${API_URL}/order-tracking/${order._id}/status`, {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ status: newStatus, note: "" })

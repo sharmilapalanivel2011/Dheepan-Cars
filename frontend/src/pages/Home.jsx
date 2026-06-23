@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useNavigate, Link } from "react-router-dom"
 
 import AOS from 'aos'
@@ -9,6 +10,7 @@ import "./Home.css"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
+
 function Home(){
 
 const navigate = useNavigate()
@@ -16,9 +18,12 @@ const navigate = useNavigate()
 // ✅ new state
 const [products, setProducts] = useState([])
 
+
 // ✅ fetch products from backend
+
+
 useEffect(() => {
-  axios.get("http://localhost:5000/products")
+  axios.get(`${API_URL}/products`)
     .then(res => setProducts(res.data))
     .catch(err => console.log(err))
 }, [])

@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import { NavLink } from "react-router-dom"
 import { useState, useContext } from "react"
 import { FaBars, FaHeart } from "react-icons/fa"

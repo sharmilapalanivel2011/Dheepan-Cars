@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useEffect, useState } from "react"
 import "../styles/Admin.css"
 
@@ -16,11 +17,13 @@ function Admin() {
   const [uploading, setUploading] = useState(false)
   const [message, setMessage] = useState("")
 
-  useEffect(() => {
-    fetch("http://localhost:5000/orders")
-      .then(res => res.json())
-      .then(data => setOrders(data))
-  }, [])
+  
+
+useEffect(() => {
+  fetch(`${API_URL}/orders`)
+    .then(res => res.json())
+    .then(data => setOrders(data))
+}, [])
 
   // Step 7 — Image Upload to Cloudinary
   const handleUpload = async () => {
@@ -30,10 +33,12 @@ function Admin() {
     const formData = new FormData()
     formData.append("image", imageFile)
 
-    const res = await fetch("http://localhost:5000/upload-image", {
-      method: "POST",
-      body: formData
-    })
+   
+
+const res = await fetch(`${API_URL}/upload-image`, {
+  method: "POST",
+  body: formData
+})
 
     const data = await res.json()
     if (data.success) {
@@ -58,11 +63,13 @@ function Admin() {
       stock: Number(stock)
     }
 
-    const res = await fetch("http://localhost:5000/add-product", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(product)
-    })
+    
+
+const res = await fetch(`${API_URL}/add-product`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(product)
+})
 
     const data = await res.json()
     if (data.success) {
@@ -80,11 +87,16 @@ function Admin() {
     }
   }
 
-  // Delete Order
-  const handleDeleteOrder = async (id) => {
-    await fetch(`http://localhost:5000/order/${id}`, { method: "DELETE" })
-    setOrders(orders.filter(o => o._id !== id))
-  }
+
+
+// Delete Order
+const handleDeleteOrder = async (id) => {
+  await fetch(`${API_URL}/order/${id}`, {
+    method: "DELETE"
+  });
+
+  setOrders(orders.filter(o => o._id !== id));
+}
 
   return (
     <div className="admin-page">

@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useState } from "react"
 import { useAuth } from "../context/AuthContext"
 import "./Login.css"
@@ -30,7 +31,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post("http://localhost:5000/login", {
+      const res = await axios.post(`${API_URL}/login`, {
         email,
         password
       })
@@ -38,19 +39,20 @@ function Login() {
       if (res.data.success) {
         redirectAfterLogin(res.data.user)
       } else if (res.data.requireOtp) {
-        await axios.post("http://localhost:5000/send-otp", { email })
+        await axios.post(`${API_URL}/send-otp`, { email })
         setStep("otp")
       } else {
         alert(res.data.message)
       }
     } catch (err) {
-      alert("Login failed. Try again.")
+       alert("Login failed: " + err.message + " | " + JSON.stringify(err.response?.data || "no response"))
+}
     }
   }
 
   const handleVerifyOtp = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/verify-otp", {
+      const res = await axios.post(`${API_URL}/verify-otp`, {
         email,
         otp
       })

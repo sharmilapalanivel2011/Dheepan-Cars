@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import AdminSidebar from "../components/AdminSidebar"
@@ -17,15 +18,15 @@ function AdminDashboard() {
   const navigate = useNavigate()
 
 
-  // 2️⃣ useEffect
-  useEffect(() => {
-    fetch("http://localhost:5000/orders")
-      .then(res => res.json())
-      .then(data => setOrders(data))
-    fetch("http://localhost:5000/products")
-      .then(res => res.json())
-      .then(data => setProducts(data))
-  }, [])
+ useEffect(() => {
+  fetch(`${API_URL}/orders`)
+    .then(res => res.json())
+    .then(data => setOrders(data))
+
+  fetch(`${API_URL}/products`)
+    .then(res => res.json())
+    .then(data => setProducts(data))
+}, [])
 
 
   // 3️⃣ Helper functions

@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useLocation, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { FaStar, FaTruck, FaShieldAlt, FaLock } from "react-icons/fa"
@@ -82,7 +83,7 @@ function Checkout() {
 
 
     try {
-      const res = await fetch("http://localhost:5000/place-order", {
+      const res = await fetch(`${API_URL}/place-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -103,7 +104,7 @@ function Checkout() {
       }
 
 
-      await fetch("http://localhost:5000/send-order-email", {
+      await fetch(`${API_URL}/send-order-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

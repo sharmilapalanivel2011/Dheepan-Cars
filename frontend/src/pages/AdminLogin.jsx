@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
@@ -12,30 +13,31 @@ function AdminLogin() {
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setError("")
+  e.preventDefault()
+  setLoading(true)
+  setError("")
 
-    try {
-      const res = await fetch("http://localhost:5000/admin-login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
-      })
-      const data = await res.json()
+  try {
+    const res = await fetch(`${API_URL}/admin-login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    })
 
-      if (data.success) {
-        adminLogin({ email, role: "admin" })
-        navigate("/admin")
-      } else {
-        setError(data.message || "Invalid credentials")
-      }
-    } catch (err) {
-      setError("Server error. Try again.")
+    const data = await res.json()
+
+    if (data.success) {
+      adminLogin({ email, role: "admin" })
+      navigate("/admin")
+    } else {
+      setError(data.message || "Invalid credentials")
     }
-
-    setLoading(false)
+  } catch (err) {
+    setError("Server error. Try again.")
   }
+
+  setLoading(false)
+}
 
  return (
   <div className="admin-login-page">

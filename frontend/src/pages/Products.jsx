@@ -1,3 +1,5 @@
+import { API_URL } from "../config"
+
 import { useState, useEffect, useContext } from "react"
 import { FaSearch, FaHeart, FaRegHeart, FaStar, FaFilter, FaTimes, FaShoppingCart, FaBolt, FaBalanceScale } from "react-icons/fa"
 import { MdLocalOffer, MdVerified } from "react-icons/md"
@@ -16,7 +18,7 @@ function Products() {
   const [selectedRating, setSelectedRating] = useState(0)
   const [addedToCart, setAddedToCart] = useState({})
   const [reviewCounts, setReviewCounts] = useState({}) // ✅ live review counts
-
+const [products, setProducts] = useState([]);
   const navigate = useNavigate()
   const { addToCart } = useContext(CartContext)
   const { wishlist, toggleWishlist, isInWishlist } = useContext(WishlistContext)
@@ -68,27 +70,31 @@ function Products() {
   ]
 
   // ✅ Fetch API products
-  useEffect(() => {
-    axios.get("http://localhost:5000/products")
-      .then(res => setApiProducts(res.data))
-      .catch(err => console.log(err))
-  }, [])
+ 
+
+useEffect(() => {
+  axios.get(`${API_URL}/products`)
+    .then(res => setProducts(res.data))
+    .catch(err => console.log(err))
+}, [])
 
   // ✅ Fetch review counts — single API call for all products
-  const fetchReviewCounts = () => {
-    axios.get("http://localhost:5000/review-counts")
-      .then(res => {
-        const countsMap = {}
-        res.data.forEach(item => {
-          countsMap[String(item._id)] = {
-            count: item.count,
-            avgRating: parseFloat(item.avgRating.toFixed(1))
-          }
-        })
-        setReviewCounts(countsMap)
+  
+
+const fetchReviewCounts = () => {
+  axios.get(`${API_URL}/review-counts`)
+    .then(res => {
+      const countsMap = {}
+      res.data.forEach(item => {
+        countsMap[String(item._id)] = {
+          count: item.count,
+          avgRating: parseFloat(item.avgRating.toFixed(1))
+        }
       })
-      .catch(err => console.log(err))
-  }
+      setReviewCounts(countsMap)
+    })
+    .catch(err => console.log(err))
+}
 
   useEffect(() => {
     fetchReviewCounts()

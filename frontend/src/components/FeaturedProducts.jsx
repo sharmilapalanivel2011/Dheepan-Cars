@@ -1,3 +1,4 @@
+import { API_URL } from '../config';
 import "./FeaturedProducts.css"
 import { useNavigate } from "react-router-dom"
 import { useContext, useState } from "react"
